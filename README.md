@@ -36,8 +36,12 @@ calls are valid.
 
 The script does not take into account any bolometric corrections as of yet.
 
+Note: this module requires the uncertainties module to function.**
+
 *http://adsabs.harvard.edu/abs/1998AJ....115.1921A &
 http://adsabs.harvard.edu/abs/2006MNRAS.370.1979M
+
+**https://pypi.python.org/pypi/uncertainties/
 
 Copyright (c) 2014, Shane Vickers
 All rights reserved.
