@@ -15,12 +15,13 @@ The module can be used by;
 
 and called either by 
     
-    plCalc.calc(P, m, ebv, band)
+    plCalc.calc(P, m, ebv, band, verbose=True)
 
 where P is the period in days, m is the apparent magnitude,
 ebv is the B-V color excess and the band is the waveband
-of the apparent magnitude. Options for the waveband are
-V, J, H and K. 
+of the apparent magnitude. The verbosity determines 
+whether or not a summary is printed using stdout. 
+Options for the waveband are V, J, H and K. 
 
 This function call will return the distance of the object.
 

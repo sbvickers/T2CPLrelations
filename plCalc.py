@@ -84,7 +84,7 @@ def dist(m, M, A):
     """
     return 10**((m - M - A)/5 + 1) / 1000
 
-def calc(P, m, ebv, band):
+def calc(P, m, ebv, band, verbose=True):
     """
         Calculates the distance using the distance modulus.
 
@@ -104,6 +104,9 @@ def calc(P, m, ebv, band):
                 If no band is defined then all bands are calculated assuming 
                 m is a list of apparent magnitudes [V, J, H, K]
 
+                verbose : bool, optional
+                Determines whether or not to print a summary of the data.
+
         Returns
         ---------
                 d : ufloat
@@ -119,10 +122,11 @@ def calc(P, m, ebv, band):
     A = A_lambda(ebv, band)
     d = dist(m, M, A)
 
-    print( "Pulsation Period = {:.1F} days".format(P) )
-    print( "Apparent {}-Band Magnitude = {:.2F}+-{:.2F} mag".format(band, m.n, m.s) )
-    print( "Absolute {}-Band Magnitude = {:.2F}+-{:.2F} mag".format(band, M.n, M.s) )
-    print( "Distance = {:.1F}+-{:.1F} kpc".format(d.n, d.s) )
+    if verbose:
+        print( "Pulsation Period = {:.1F} days".format(P) )
+        print( "Apparent {}-Band Magnitude = {:.2F}+-{:.2F} mag".format(band, m.n, m.s) )
+        print( "Absolute {}-Band Magnitude = {:.2F}+-{:.2F} mag".format(band, M.n, M.s) )
+        print( "Distance = {:.1F}+-{:.1F} kpc".format(d.n, d.s) )
 
     return d
 
