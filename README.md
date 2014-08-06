@@ -13,7 +13,7 @@ The module can be used by;
 
     import plCalc
 
-and called either by 
+and called by 
     
     plCalc.calc(P, m, ebv, band, verbose=True)
 
